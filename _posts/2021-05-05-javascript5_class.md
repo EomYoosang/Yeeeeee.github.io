@@ -93,9 +93,10 @@ Animal.prototype.say = function() {
 const dog = new Animal('개', '멍멍이', '멍멍');
 
 ```
-위에서 상속받은 Dog class의 객체 dog과 프로토타입을 통해 생성한 dog의 프로토타입 체인은 유사합니다.<br>
+위에서 상속받은 Dog class의 객체 dog과 프로토타입을 통해 생성한 dog의 프로토타입 체인은 유사합니다.  
 <img src="./prototype_chain.png" width="80%" />
 
 ## Reference
 [https://jeong-pro.tistory.com/120](https://jeong-pro.tistory.com/120)  
+
 [https://learnjs.vlpt.us/basics/10-prototype-class.html](https://learnjs.vlpt.us/basics/10-prototype-class.html)
