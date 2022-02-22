@@ -46,7 +46,7 @@ const cat = new Animal('고양이', '야옹이', '야옹');
 dog.say();
 cat.say();
 ```
-함수 내부의 함수를 '메서드'라고 부른다. 이 경우 자동으로 prototype으로 등록됩니다.
+함수 내부의 함수를 '메서드'라고 부릅니다. 이 경우 자동으로 prototype으로 등록됩니다.
 결과는 다음과 같습니다.
 
 ```javascript
@@ -94,8 +94,8 @@ const dog = new Animal('개', '멍멍이', '멍멍');
 
 ```
 위에서 상속받은 Dog class의 객체 dog과 프로토타입을 통해 생성한 dog의 프로토타입 체인은 유사합니다.<br>
-<img src="./prototype_chain.png" width="900">
+<img src="./prototype_chain.png" width="80%" />
 
 ## Reference
-https://jeong-pro.tistory.com/120
-https://learnjs.vlpt.us/basics/10-prototype-class.html
+[https://jeong-pro.tistory.com/120](https://jeong-pro.tistory.com/120)  
+[https://learnjs.vlpt.us/basics/10-prototype-class.html](https://learnjs.vlpt.us/basics/10-prototype-class.html)

@@ -89,15 +89,16 @@ Prototype Object는 일반적인 객체와 같으며 속성으로 **constructor*
 위 코드 실행 시<img src = ./result.png width="60%"><br> Animal Prototype Object에 say()가 추가되었습니다.
 
 이번엔 dog를 Animal함수를 통해 생성 후 dog.\_\_proto\_\_ 를 확인해보겠습니다.  
-<img src = ./result3.png width="60%">
+<img src = ./result3.png width="60%"/>
 
 ### 마무리
 
-<center><img src=./prototype_chain.png width="90%"></center><br>
+<center><img src=./prototype_chain.png width="90%" /></center><br>
 
 Prototype이 값을 재사용하는 것 뿐만 아니라 객체들이 프로토타입 체인으로 연결되어있음을 알아보았습니다.<br><br><br><br>
 
 ### Reference
 
-https://learnjs.vlpt.us/basics/10-prototype-class.htmlhttps://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67
-https://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67
+[https://learnjs.vlpt.us/basics/10-prototype-class.htmlhttps://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67
+https://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67](https://learnjs.vlpt.us/basics/10-prototype-class.htmlhttps://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67
+https://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67)

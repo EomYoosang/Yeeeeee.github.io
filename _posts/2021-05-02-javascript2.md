@@ -7,10 +7,8 @@ tags:
 ---
 
 # JavaScript 2
-============
 
 ## 머릿말
-------
 
 이제 대충 자바스크립트가 뭔지 알았으니 본격적으로 공부를 해보자!
 
@@ -62,7 +60,7 @@ console.log(value);
 ```
 
 위 코드 실행시 오류가 발생한다!  
-<img src="./const_error.png">
+<img alt="error" src="./const_error.png" width="80%" />
 
 ## 03.	연산자 
 1.	산술 연산자
@@ -111,4 +109,4 @@ a /= 3;
 
 ### Reference
 
-https://learnjs.vlpt.us/
+[https://learnjs.vlpt.us/](https://learnjs.vlpt.us/)
