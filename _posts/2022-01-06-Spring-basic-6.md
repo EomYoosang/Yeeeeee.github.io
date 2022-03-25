@@ -108,7 +108,7 @@ public class MemoryMemberRepository implements MemberRepository {
 }
 ```
 위 클래스들의 의존관계는 아래와 같다.  
-<img alt="의존관계" src="springContainer" width="80%" />  
+<img alt="의존관계" src="/assets/images/springContainer" width="80%" />  
 
 
 > **참고** : 스프링은 스프링 컨테이너에 스프링 빈을 등록할 때, 기본으로 싱글톤으로 등록한다.  

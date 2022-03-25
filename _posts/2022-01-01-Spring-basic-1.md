@@ -18,7 +18,7 @@ tags:
 다운받아 압축해제
 ### 2. 인텔리제이 프로젝트 오픈
 인텔리제이 프로젝트에 **build.gradle** 추가  
-<img alt="OpenProject" src="/assets/images/open-project.png" />  
+<img alt="OpenProject" src="/assets/images/open-project.png" width="50%"/>  
 
 
 ### build.gradle

@@ -21,7 +21,7 @@ tags:
 - 아직 데이터 저장소가 선정되지 않음 (가상의 시나리오)
 
 #### 일반적인 웹 애플리케이션 계층 구조
-<img alt="기본 웹 구조" src="basicWeb.png" style="width:80%;" />
+<img alt="기본 웹 구조" src="/assets/images/basicWeb.png" style="width:80%;" />
 
 - 컨트롤러: 웹 MVC의 컨트롤러 역할
 - 서비스: 핵심 비즈니스 로직 구현
@@ -31,7 +31,7 @@ tags:
 **예제도 위의 일반적인 웹 애플리케이션 계층 구조를 따라감**
 
 #### 클래스 의존 관계
-<img alt="의존관계" src="dependency.png" width="80%" />
+<img alt="의존관계" src="/assets/images/dependency.png" width="80%" />
 
 - 아직 데이터 저장소가 선정되지 않아서, 우선 인터페이스로 구현 클래스를 변경할 수 있도록 설계
 - 데이터 저장소는 RDB, NoSQL 등등 다양한 저장소를 고민 중인 상황으로 가정
@@ -212,7 +212,7 @@ public class MemberService {
 ### 회원 서비스 테스트 케이스 생성
 회원 리포지토리 테스트 케이스를 생성할 때는 직접 만들어줬지만 단축키를 사용하면 편하다.  
 `cmd + shift + t`  
-<img alt="서비스테스트" src="serviceTest.png"  width="80%" />
+<img alt="서비스테스트" src="/assets/images/serviceTest.png"  width="80%" />
 
 ```java:MemberServiceTest.java
 package eys.hellospring.service;

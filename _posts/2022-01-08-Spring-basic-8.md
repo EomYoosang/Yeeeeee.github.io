@@ -238,7 +238,7 @@ public class SpringConfig {
 - DataSource는 데이터베이스 커넥션을 얻을 때 사용하는 객체이다. 스프링 부트는 데이터베이스 커넥션 정보를 바탕으로 DataSource를 생성하고 스프링 빈으로 만들어둔다. 그래서 DI를 받을 수 있다.
 
 **스프링 설정 이미지**  
-<img alt="스프링 설정 이미지" src="springSetting.png" style="width:80%" />
+<img alt="스프링 설정 이미지" src="/assets/images/springSetting.png" style="width:80%" />
 
 - 개방-폐쇄 원칙 (OCP, Open-Closed Principle)
    - 확장에는 열려있고, 수정, 변경에는 닫혀 있다.
@@ -571,7 +571,7 @@ public class SpringConfig {
 >주의: 코드 작성 중 SpringConfig의 Constructor에서 파라미터를 못받아오는 오류가 생겼는데, 이전 실습에서 사용한 코드에 `@Repository` Annotation이 남아 파라미터로 들어올 객체가 두 개 생성되어 발생한 오류였다.
 
 **스프링 데이터 JPA 제공 클래스**  
-<img alt="스프링 데이터 JPA 제공 클래스" src="springData.png" width="80%" />
+<img alt="스프링 데이터 JPA 제공 클래스" src="/assets/images/springData.png" width="80%" />
 
 **스프링 데이터 JPA 제공 기능**
 - 인터페이스를 통한 기본적인 CRUD

@@ -13,7 +13,7 @@ AOP는 Aspect Oriented Programming의 약자로 관점 지향 프로그래밍이
 
 AOP에서 각 관점을 기준으로 로직을 모듈화한다는 것은 코드들을 부분적으로 나누어서 모듈화하겠다는 의미이다. 이 때, 코드 상에서 다른 부분에서 계속 반복되어 쓰이는 코드를 **흩어진 관심사 또는 공통 관심 사항(Cross-cutting Concerns)** 이라 부른다.
 
-<img alt="공통 관심 사항" src="aspect.png" style="width:80%" />
+<img alt="공통 관심 사항" src="/assets/images/aspect.png" style="width:80%" />
 
 위와 같이 공통 관심 사항을 Aspect로 모듈화하고 핵심적인 비즈니스 로직에서 분리하여 재사용하겠다는 것이 AOP의 취지이다.
 
@@ -22,7 +22,7 @@ AOP에서 각 관점을 기준으로 로직을 모듈화한다는 것은 코드�
 - 공통 관심 사항(cross-cutting concern) vs 핵심 관심 사항(core concern)
 - 회원 가입 시간, 회원 조회 시간을 측정하고 싶다면?
 
-<img alt="스프링 컨테이너" src="springContainerAop.png" width="80%" />
+<img alt="스프링 컨테이너" src="/assets/images/springContainerAop.png" width="80%" />
 
 **MemberService 회원 조회 시간 측정 추가**
 ```java:MemberService.java
@@ -108,15 +108,15 @@ public class TimeTraceAop {
 
 ### 스프링 AOP 동작 방식 설명
 **AOP 적용 전 의존관계**  
-<img alt="스프링 적용 전" src="beforeAop.png" width="80%" />
+<img alt="스프링 적용 전" src="/assets/images/beforeAop.png" width="80%" />
 
 **AOP 적용 후 의존관계**  
-<img alt="스프링 적용 후" src="afterAop.png" width="80%" />
+<img alt="스프링 적용 후" src="/assets/images/afterAop.png" width="80%" />
 
 컨트롤러가 서비스를 주입할 때 프록시라는 가짜 서비스를 호출하고 joinPoint.proceed()가 끝나면 실제 서비스를 호출한다.
 
 **AOP 적용 전 전체 그림**  
-<img alt="스프링 적용 전 전체" src="beforeAopEntire.png" width="80%" />
+<img alt="스프링 적용 전 전체" src="/assets/images/beforeAopEntire.png" width="80%" />
 
 **AOP 적용 후 의존관계**  
-<img alt="스프링 적용 후 전쳄" src="afterAopEntire.png" width="80%" />
+<img alt="스프링 적용 후 전체" src="/assets/images/afterAopEntire.png" width="80%" />

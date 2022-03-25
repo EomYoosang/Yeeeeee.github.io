@@ -19,7 +19,7 @@ tags:
 - src/resoureces/static 폴더의 html파일 제공  
 http://localhost:8080/static.html => static.html을 보냄   
 
-<img alt="static" src="static.png" style="width:80%" />  
+<img alt="static" src="/assets/images/static.png" style="width:80%" />  
 
 ### MVC와 템플릿 엔진
 - MVC: Model, View, Controller
@@ -45,7 +45,7 @@ public class HelloController {
 </body>
 </html>
 ```  
-<img alt="template" src="template.png" stype="width:80%" />  
+<img alt="template" src="/assets/images/template.png" stype="width:80%" />  
 
 ### API
 ```java:HelloController
@@ -79,7 +79,7 @@ public class HelloController {
 - 결과: { name: spring }  
 
 **@ResponseBody 사용 원리**  
-<img alt="responseBody" src="responseBody.png" style="width:80%"  />
+<img alt="responseBody" src="/assets/images/responseBody.png" style="width:80%"  />
 - `ResponseBody`를 사용
    * HTTP의 BODY에 문자 내용을 직접 반환
    * `viewResolver`대신에 `HttpMessageConverter`가 동작
