@@ -12,12 +12,13 @@ tags:
 
 ### 1. 스프링부트 	스타터 사이트에서 스프링 프로젝트 생성
 [https://start.spring.io](https://start.spring.io/)  
-![StartSpring](spring-initializer.png)  
+<img alt="StartSpring" src="/spring-initializer.png" />  
+
 설정 후 **GENERATE**  
 다운받아 압축해제
 ### 2. 인텔리제이 프로젝트 오픈
 인텔리제이 프로젝트에 **build.gradle** 추가  
-![OpenProject](open-project.png)  
+<img alt="OpenProject" src="open-project.png" />  
 
 
 ### build.gradle
