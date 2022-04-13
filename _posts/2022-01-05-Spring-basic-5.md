@@ -7,38 +7,29 @@ tags:
 ---
 
 
-## 회원 관리 예제1
-- [비즈니스 요구사항 정리](비즈니스-요구사항-정리)
-- [회원 도메인과 리포지토리 만들기](회원-도메인과-리포지토리-만들기)
-- [회원 리포지토리 테스트 케이스 작성](회원-리포지토리-테스트-케이스-작성)
-- [회원 서비스 개발](회원-서비스-개발)
-- [회원 서비스 테스트](회원-서비스-테스트)
+# 회원 관리 예제1
+- [비즈니스 요구사항 정리](#비즈니스-요구사항-정리)
+- [회원 도메인과 리포지토리 만들기](#회원-도메인과-리포지토리-만들기)
+- [회원 리포지토리 테스트 케이스 작성](#회원-리포지토리-테스트-케이스-작성)
+- [회원 서비스 개발](#회원-서비스-개발)
+- [회원 서비스 테스트](#회원-서비스-테스트)
 
-### 비즈니스 요구사항 정리
+## 비즈니스 요구사항 정리
 **예제이므로 최소한의 정보와 기능만 다룸**
 - 데이터: 회원ID, 이름  
 - 기능: 회원 등록, 조회
 - 아직 데이터 저장소가 선정되지 않음 (가상의 시나리오)
 
-#### 일반적인 웹 애플리케이션 계층 구조
-<img alt="기본 웹 구조" src="/assets/images/basicWeb.png" style="width:80%;" />
-
-- 컨트롤러: 웹 MVC의 컨트롤러 역할
-- 서비스: 핵심 비즈니스 로직 구현
-- 리포지토리: 데이터베이스에 접근, 도메인 객체를 DB에 저장하고 관리
-- 도메인: 비즈니스 도메인 객체, 예) 회원, 주문, 쿠폰 등등 주로 데이터베이스에 저장하고 관리됨  
-
-**예제도 위의 일반적인 웹 애플리케이션 계층 구조를 따라감**
-
-#### 클래스 의존 관계
+## 클래스 의존 관계
 <img alt="의존관계" src="/assets/images/dependency.png" width="80%" />
 
 - 아직 데이터 저장소가 선정되지 않아서, 우선 인터페이스로 구현 클래스를 변경할 수 있도록 설계
 - 데이터 저장소는 RDB, NoSQL 등등 다양한 저장소를 고민 중인 상황으로 가정
 - 개발을 진행하기 위해서 초기 개발 단게에서는 구현체로 가벼운 메모리 기반의 데이터 저장소 사용
 
-### 회원 도메인과 리포지토리 만들기
+## 회원 도메인과 리포지토리 만들기
 **회원 객체**
+- Member.java  
 ```java
 package eys.hellospring.domain;
 
@@ -67,6 +58,7 @@ public class Member {
 
 ```
 **회원 리포지토리 인터페이스**
+- MemberRepository.java  
 ```java
 package eys.hellospring.repository;
 
@@ -86,6 +78,7 @@ public interface MemberRepository {
 
 ```
 **회원 리포지토리 메모리 구현체**
+- MemoryMemberRepository.java  
 ```java
 package eys.hellospring.repository;
 
@@ -125,11 +118,12 @@ public class MemoryMemberRepository implements MemberRepository {
 
 ```
 
-### 회원 리포지토리 테스트 케이스 작성
+## 회원 리포지토리 테스트 케이스 작성
 개발한 기능을 실행해서 테스트할 때 자바의 Main 메서드를 통해서 실행하거나, 웹 애플리케이션의 컨트롤러를 통해서 해당 기능을 실행한다. 이러한 방법은 시간이 오래 걸리고 여러번 테스트하기 어려우므로 자바는 JUnit이라는 프레임워크로 테스트를 실행해서 이러한 문제를 해결한다.
 
 `src/text/java` 하위 폴더에 생성   
-```java:MemoryMemberRepositoryText
+- MemoryMemberRepositoryTest.java  
+```java:MemoryMemberRepositoryTest.java
 package eys.hellospring.repository;
 
 import eys.hellospring.domain.Member;
@@ -162,7 +156,7 @@ class MemoryMemberRepositoryTest {
 ```
 
 
-### 회원 서비스 개발
+## 회원 서비스 개발
 ```java:MemberService
 package eys.hellospring.service;
 
@@ -209,7 +203,7 @@ public class MemberService {
 
 ```
 
-### 회원 서비스 테스트 케이스 생성
+## 회원 서비스 테스트 케이스 생성
 회원 리포지토리 테스트 케이스를 생성할 때는 직접 만들어줬지만 단축키를 사용하면 편하다.  
 `cmd + shift + t`  
 <img alt="서비스테스트" src="/assets/images/serviceTest.png"  width="80%" />
@@ -291,11 +285,11 @@ class MemberServiceTest {
 }
 ```
 
-### Dependency Injection
+## Dependency Injection
 MemberService 클래스의 constructor에서 memberRepository를 파라미터로 받는 이유는?  
 MemberServiceTest에서 각 테스트를 실행할 때마다 memberService가 생성되면 비용(메모리, 시간)이 발생하기 때문  
 MemberService가 memberRepository에 의존  
-#### DI의 장점
+## DI의 장점
 **1. 의존성이 줄어든다.**  
 어떤 객체가 다른 객체에 의존하게 되면 의존대상의 변화에 취약해져 의존대상이 변화되면 의존하는 객체 또한 변화해야 한다.  
 DI로 구현하면 주입받는 대상이 변하더라도 구현을 수정할 일이 줄어든다.  
