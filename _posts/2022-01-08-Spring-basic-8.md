@@ -59,7 +59,7 @@ spring.datasource.username=sa
 JDBC API로 직접 코딩하는 것은 20년 전 이야기이다. 최근에는 ORM 등을 사용한다.
 
 - JdbcMemberRepository.java
-```java:JdbcMemberRepository.java
+```java
 package eys.hellospring.repository;
 import eys.hellospring.domain.Member;
 import org.springframework.jdbc.datasource.DataSourceUtils;
@@ -211,7 +211,7 @@ public class JdbcMemberRepository implements MemberRepository {
 
 MemoryMemberRepository 대신 JdbcMemberRepository를 사용하기 위해 SpringConfig를 수정한다.  
 - SpringConfig.java
-```java:SpringConfig.java
+```java
 @Configuration
 public class SpringConfig {
 
@@ -248,7 +248,7 @@ public class SpringConfig {
 스프링 컨테이너와 DB까지 연결된 통합 테스트를 진행해보자.
 
 - MemberServiceIntegrationTest.java
-```java:MemberServiceInterationTest.java
+```java
 package eys.hellospring.service;
 
 import eys.hellospring.domain.Member;
@@ -342,7 +342,7 @@ class MemberServiceIntegrationTest {
 
 **스프링 JdbcTemplate 회원 리포지토리**  
 - JdbcTemplateMemberRepository.java  
-```java:JdbcTemplateMemberRepository.java
+```java
 public class JdbcTemplateMemberRepository implements MemberRepository {
     private final JdbcTemplate jdbcTemplate;
     public JdbcTemplateMemberRepository(DataSource dataSource) {

@@ -78,7 +78,7 @@ public class MemberService {
 ### AOP 적용
 - AOP: Aspected Oriented Programming
 - 공통 관심 사항(cross-cutting concern) vs. 핵심 관심 사항(core concern)
-<img alt="스프링 컨테이너 AOP적용" src="springContainerAop2.png" width="80%" />  
+<img alt="스프링 컨테이너 AOP적용" src="/assets/images/springContainerAop2.png" width="80%" />  
 
 **시간 측정 AOP 등록**
 ```java:TimeTraceAop.java

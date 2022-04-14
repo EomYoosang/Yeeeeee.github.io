@@ -10,7 +10,7 @@ tags:
 # 회원 관리 예제3
 ## 회원 웹 기능 - 홈 화면 추가
 - HomeController.java  
-```java:HomeController.java
+```java
 @Controller
 public class HomeController {
 	@GetMapping("/")
@@ -21,7 +21,8 @@ public class HomeController {
 ```
 
 - home.html  
-```html:home.html
+
+```html
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
@@ -46,7 +47,7 @@ public class HomeController {
 MemberController.java에 회원 등록 매핑을 추가한다.
 
 - MemberController.java  
-```java:MemberController.java
+```java
 @Controller
 public class MemberController {
 
@@ -60,7 +61,7 @@ public class MemberController {
 ```
 
 - members/createMemberForm.html  
-```html.createMemberForm.html
+```html
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
@@ -80,7 +81,7 @@ public class MemberController {
 MemberController에 form의 post요청을 처리하는 메서드를 추가한다.
 
 - MemberController.java  
-```java:MemberController.java
+```java
 @Controller
 public class MemberController {
 
@@ -100,7 +101,7 @@ public class MemberController {
 폼 데이터를 받기 위한 클래스도 추가한다.
 
 - MemberForm.java  
-```java:MemberForm.java
+```java
 public class MemberForm {
     private String name;
 
@@ -117,7 +118,7 @@ public class MemberForm {
 다음은 회원 목록 확인 페이지를 만들어보자.  
 
 - members/memberList.html  
-```html:memberList.html
+```html
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
@@ -144,7 +145,7 @@ public class MemberForm {
 ```
 MemberController에 GetMapping을 추가한다.  
 - MemberController.java  
-```java:MemberConroller.java
+```java
 @Controller
 public class MemberController {
 

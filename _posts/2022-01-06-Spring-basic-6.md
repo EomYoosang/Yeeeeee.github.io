@@ -17,7 +17,7 @@ SpringBoot에서는 **Annotation** 을 이용하여 편리하게 빈을 생성�
 
 **MemberController**
 - MemberController.java 
-```java:MemberController.java
+```java
 package eys.hellospring.controller;
 
 import eys.hellospring.service.MemberService;
@@ -51,7 +51,7 @@ Annotation이 지정된 클래스는 자동으로 빈이 생성된다.
 ### 자바 코드로 직접 스프링 빈 등록하기
 회원 서비스와 회원 리포지토리의 @Service, @Repository, @Autowired Annotation을 제거하고 진행한다.
 - SpringConfig.java  
-```java:SpringConfig.java
+```java
 @Configuration
 public class SpringConfig {
 	@Bean
@@ -70,7 +70,7 @@ public class SpringConfig {
 ### MemberController의 의존관계
 MemberController가 MemberService를, MemberService가 MemberRepository를 이용하므로 각 클래스의 빈이 생성되어야 한다.
 - MemberController.java  
-```java:MemberController.java
+```java
 
 @Controller
 public class MemberController {
@@ -85,7 +85,7 @@ public class MemberController {
 ```
 
 - MemberService.java  
-```java:MemberService.java
+```java
 @Service
 public class MemberService {
 
@@ -100,7 +100,7 @@ public class MemberService {
 ```
 
 - MemberRepository.java
-```java:MemberRepository.java
+```java
 @Repository
 public interface MemberRepository {
 	...
@@ -108,7 +108,7 @@ public interface MemberRepository {
 ```
 
 - MemoryMemberRepository.java  
-```java:MemoryMemberRepository.java
+```java
 
 @Repository
 public class MemoryMemberRepository implements MemberRepository {

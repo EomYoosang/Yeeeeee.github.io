@@ -48,7 +48,7 @@ MVC 패턴의 주 목적은 Business logic과 Presentation logic을 분리하기
 ## 예제 코드
 - HelloController.java
 
-```java:HelloController
+```java
 @Controller
 public class HelloController {
 	@GetMapping("hello-mvc")

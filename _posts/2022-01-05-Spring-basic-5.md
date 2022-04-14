@@ -123,7 +123,7 @@ public class MemoryMemberRepository implements MemberRepository {
 
 `src/text/java` 하위 폴더에 생성   
 - MemoryMemberRepositoryTest.java  
-```java:MemoryMemberRepositoryTest.java
+```java
 package eys.hellospring.repository;
 
 import eys.hellospring.domain.Member;
@@ -157,7 +157,8 @@ class MemoryMemberRepositoryTest {
 
 
 ## 회원 서비스 개발
-```java:MemberService
+- MemberService.java  
+```java
 package eys.hellospring.service;
 
 import eys.hellospring.domain.Member;
@@ -207,8 +208,8 @@ public class MemberService {
 회원 리포지토리 테스트 케이스를 생성할 때는 직접 만들어줬지만 단축키를 사용하면 편하다.  
 `cmd + shift + t`  
 <img alt="서비스테스트" src="/assets/images/serviceTest.png"  width="80%" />
-
-```java:MemberServiceTest.java
+- MemberServiceTest.java  
+```java
 package eys.hellospring.service;
 
 import eys.hellospring.domain.Member;

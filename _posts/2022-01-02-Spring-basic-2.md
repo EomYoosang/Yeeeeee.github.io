@@ -32,7 +32,7 @@ thymeleaf외에도 FreeMarker, Mustache등 사용
 thymeleaf 공식문서: [https://www.tymeleaf.org/](https://www.tymeleaf.org/)
 
 #### Controller
-```java:HelloController.java
+```java
 package eys.hellospring.controller;
 
 import org.springframework.stereotype.Controller;
@@ -53,7 +53,7 @@ public class HelloController {
 `controller` 패키지에 `HelloController`클래스 생성
 
 #### Template
-```html:hello.html
+```html
 <!DOCTYPE HTML>
 <html xmlns:th="http://thymeleaf.org">
 <head>
