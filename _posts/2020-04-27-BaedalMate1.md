@@ -1,12 +1,12 @@
 ---
-title: [배달메이트] docker와 jenkins를 이용한 스프링부트 프로젝트 배포
+title: docker와 jenkins를 이용한 스프링부트 프로젝트 배포
 description:
 categories:
  - baedalmate
 tags:
 ---
 
-# [배달메이트] docker와 jenkins를 이용한 스프링부트 프로젝트 배포
+# docker와 jenkins를 이용한 스프링부트 프로젝트 배포
 이번 포스트에서는 Docker 환경에서의 Jenkins 빌드 자동화 구축에 대해 알아보겠습니다.  
 다음의 글을 참고하며 작성하였습니다.  
 [https://dev-overload.tistory.com/40](https://dev-overload.tistory.com/40)  
