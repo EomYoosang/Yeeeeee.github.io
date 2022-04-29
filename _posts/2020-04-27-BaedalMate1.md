@@ -2,7 +2,7 @@
 title: [배달메이트] docker와 jenkins를 이용한 스프링부트 프로젝트 배포
 description:
 categories:
- - baedalmate, spring
+ - baedalmate
 tags:
 ---
 
