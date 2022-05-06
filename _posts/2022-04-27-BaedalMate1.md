@@ -13,8 +13,10 @@ tags:
 [https://dev-overload.tistory.com/40](https://dev-overload.tistory.com/40)  
 
 ## 1. Docker 설치 및 Jenkins 컨테이너 준비
+
 로컬 환경에 docker를 설치합니다.  
 **로컬 환경**
+
 - m1 맥북 에어 13인치
 - os: mac os moterey 12.3.1
 
@@ -23,6 +25,7 @@ tags:
 homebrew를 사용하여 살치해도 되지만 [도커 사이트](https://www.docker.com/get-started/)에서 설치하였습니다.  
 
 설치 후 터미널에 아래 명령어를 입력해 jenkins 이미지를 pull하고 컨테이너를 적재합니다.  
+
 ```
 // jenkins 이미지 확보
 $ docker pull jenkins/jenkins:lts
@@ -35,10 +38,10 @@ $ docker run --name jenkins-docker -d -p 8085:8080 -p 50000:50000 -v /users/eomy
 ```
 
 실행 명령어 옵션의 의미는 각각 아래와 같습니다.  
+
 - -d: 백그라운드 실행
 - -p: 컨테이너와 호스트간 포트 연결
 - -v: 이미지의 /var/jenkins_home 디렉토리를 호스트 내에 마운트
-
 
 `docker ps` 명령어를 통해 잘 실행됐는지 확인합니다.  
 
@@ -75,8 +78,8 @@ $ sudo mkdir /users/eomyoosang/jenkins/.ssh
 $ sudo chmod 700 /users/eomyoosang/jenkins/.ssh 
 $ sudo ssh-keygen -t rsa
 ```
-진행하면 아래의 저장 경로와 키파일 이름을 설정하는 구간이 나옵니다. 다음과 같이 지정합니다. Enter file in which to save the key (/root/.ssh/id_rsa): /users/eomyoosang/jenkins/.ssh/id_rsa
 
+진행하면 아래의 저장 경로와 키파일 이름을 설정하는 구간이 나옵니다. 다음과 같이 지정합니다. Enter file in which to save the key (/root/.ssh/id_rsa): /users/eomyoosang/jenkins/.ssh/id_rsa
 
 ## 3. GitHub에 Jenkins의 Public SSH Key 등록
 
@@ -85,8 +88,6 @@ $ sudo ssh-keygen -t rsa
 ```
 $ cat /users/eomyoosang/jenkins/.ssh/id_rsa.pub
 ```
-
-
 
 ## 4. Jenkins에 Service Server SSH 접근 설정
 
@@ -130,6 +131,7 @@ private 키는 `/users/eomyoosang/jenkins/.ssh/id_rsa`의 키값을 복사해 �
 <img alt="ssh설정" src="/assets/images/jenkins-ssh설정.png" />  
 
 ssh접속이므로 name과 RefSpec, Branch Specifier에 위와 같이 입력합니다.  
+
 - Name: origin
 - RefSpec: +refs/pull/*:refs/remotes/origin/pr/*
 - Branch Specifier: */**
@@ -140,22 +142,26 @@ ssh접속이므로 name과 RefSpec, Branch Specifier에 위와 같이 입력합�
 <img alt="빌드환경설정2" src="/assets/images/jenkins-build설정2.png" />
 
 - **Source files**: 전송할 파일의 위치
+
 - **Remote Directory**: 해당 위치로 빌드 파일이 전송된다. /baedalmate/deploy로 설정하였고 위에서 /home/ubuntu 경로를 설정하여 /home/ubuntu/baedalmate/deploy 경로로 전송된다. 배포서버에 미리 디렉토리를 생성한다.  
+
 - **exec command**: 빌드파일 전송 후 실행할 명령어이다. /home/ubuntu/baedalmate/script/init_server.sh를 실행하게 하였고 해당 파일의 내용은 아래와 같다.  
-```
-echo "PID Check..."
-CURRENT_PID=$(ps -ef | grep java | grep jenkins_test_spring* | awk '{print $2}')
-echo "Running PID: {$CURRENT_PID}"
-if "$CURRENT_PID" [ -z CURRENT_PID ] ; then
+  
+  ```
+  echo "PID Check..."
+  CURRENT_PID=$(ps -ef | grep java | grep jenkins_test_spring* | awk '{print $2}')
+  echo "Running PID: {$CURRENT_PID}"
+  if "$CURRENT_PID" [ -z CURRENT_PID ] ; then
         echo "Project is not running"
-else
+  else
         kill -9 $CURRENT_PID
-sleep 10
-fi
-echo "Deploy Project...."
-nohup java -jar /home/serve/spring_project/target/jenkins_test_spring-0.0.1-SNAPSHOT.jar >> /home/serve/spring_project/logs/jenkins_test_spring.log &
-echo "Done"
-```
+  sleep 10
+  fi
+  echo "Deploy Project...."
+  nohup java -jar /home/serve/spring_project/target/jenkins_test_spring-0.0.1-SNAPSHOT.jar >> /home/serve/spring_project/logs/jenkins_test_spring.log &
+  echo "Done"
+  ```
 
 ## 8. 프로젝트 빌드&배포
+
 저장 후 프로젝트에 들어간 후 좌측의 Build Now를 클릭해 배포를 진행합니다.  
