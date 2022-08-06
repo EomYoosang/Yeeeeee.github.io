@@ -9,3 +9,7 @@ Thumbs.db
 .rbenv-version
 .rvmrc
 /vendor
+
+_posts/*.png
+_posts/*.jpg
+_posts/*.jpeg
