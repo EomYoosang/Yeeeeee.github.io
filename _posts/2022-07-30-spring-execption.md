@@ -255,4 +255,4 @@ public class CustomTempErrorAttributes extends DefaultErrorAttributes {
 
 위 그림처럼 Controller, ControllerAdvice에서 ExceptionHandler가 있는지 확인하여 처리하며 없다면 @ResponseStatus 또는 ResponseStatusException가 있는지 확인하고 모두 해당하지 않는다면 BasicErrorController를 거쳐 에러가 처리됩니다.  
 
-이번 포스트에서 ControllerAdvice를 사용하는 편이 일반적으로 가장 좋은 방법임을 알아봤습니다. 다음 포스트에서는 ControllerAdvice를 효과적으로 사용하는 방법을 다뤄보겠습니다.
+이번 포스트에서 ControllerAdvice를 사용하는 편이 일반적으로 가장 좋은 방법임을 알아봤습니다. 다음 포스트에서는 ControllerAdvice 및 RestControllerAdvice를 효과적으로 사용하는 방법을 다뤄보겠습니다.
